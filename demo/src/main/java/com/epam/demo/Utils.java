@@ -7,12 +7,8 @@ public class Utils {
         int counter = 0;
         for (String arg : args) {
             try{
-                double buffer = 0;
-                if(arg.contains(".")){
-                    String newStr = arg.replace(".", ",");
-                } else {
-                    buffer = Integer.parseInt(arg);
-                }
+                double buffer;
+                buffer = Double.parseDouble(arg);
                 if(buffer > 0){
                     counter++;
                 }
