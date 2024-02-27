@@ -6,9 +6,13 @@ public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
         int counter = 0;
         for (String arg : args) {
-            int buffer = Integer.parseInt(arg);
-            if(buffer > 0){
-                counter++;
+            try{
+                int buffer = Integer.parseInt(arg);
+                if(buffer > 0){
+                    counter++;
+                }
+            } catch (NumberFormatException e){
+                return false;
             }
         }
         return counter == args.size();
